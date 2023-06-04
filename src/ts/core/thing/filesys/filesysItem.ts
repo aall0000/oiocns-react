@@ -275,7 +275,7 @@ export class FileSystemItem implements IFileSystemItem {
     }
     return exist;
   }
-  download(path: string, onProgress: OnProgressType): Promise<void> {
+  download(_path: string, _onProgress: OnProgressType): Promise<void> {
     throw new Error('Method not implemented.');
   }
   /** 校验权限 */

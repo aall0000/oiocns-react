@@ -5,6 +5,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import FileViewer from 'react-file-viewer';
+import MatFileOperate from "../../MatFileOperate";
+
 
 interface IProps {
   share: FileItemShare;
@@ -25,12 +27,13 @@ const FilePreview = ({ share, previewDone }: IProps) => {
 
   const getBody = () => {
     if (share.thumbnail && share.thumbnail.length > 0) {
+      console.log(share.shareLink)
       return <Image src={share.shareLink} title={share.name} preview={false} />;
     }
     // 自定义文件类型处理
     switch (share.extension) {
       case '.mat':
-        break;
+        return <MatFileOperate share={share} />
     }
     return (
       <FileViewer
