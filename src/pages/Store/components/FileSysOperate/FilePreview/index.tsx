@@ -5,7 +5,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import FileViewer from 'react-file-viewer';
-import MatFileOperate from "../../MatFileOperate";
+import Mat from "./Mat";
+//import MatFileOperate from "../../MatFileOperate";
+
 
 
 interface IProps {
@@ -33,7 +35,7 @@ const FilePreview = ({ share, previewDone }: IProps) => {
     // 自定义文件类型处理
     switch (share.extension) {
       case '.mat':
-        return <MatFileOperate share={share} />
+        return <Mat share={share}/>
     }
     return (
       <FileViewer
